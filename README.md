@@ -28,7 +28,7 @@ docker-compose run web python3 manage.py createsuperuser
 ```
 *In Postman examples I'm using <br/>
 ```
-username: Admin
+username: admin
 password: Pass123
 ```
 ## API
