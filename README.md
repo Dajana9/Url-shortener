@@ -3,9 +3,11 @@
 RESTful API that will take any URL
 and create a shorter version of it, so it’s easier to remember/use/share.
 
+Backend - Django
+Frontend - React
 ## Stack
 
-Django, PostgreSQL (database)
+Django, PostgreSQL (database), Python3, React,
 
 ## Setup
 
@@ -13,14 +15,15 @@ Clone this repository or download zip.<br/>
 
 #### Requirements
 
-You need to have docker, docker-compose and Python3 installed
+You need to have docker, docker-compose, Python3 and npm installed
 
 For testing purposes I suggest Postman.<br/>
 There is a 'UrlShortener.postman_collection.json' with examples od GET,POST,DELETE methods.<br/>
 
-#### Run:<br/>
+#### Run backend:<br/>
 
 ```
+docker-compose build
 docker-compose up
 ```
 
@@ -36,59 +39,38 @@ docker-compose run web python3 manage.py createsuperuser
 username: admin
 password: Pass123
 ```
+#### Run frontend:<br/>
+```
+npm i
+npm start
+```
+#### Run all:<br/>
+*at the moment not working but I'll fix it*
+```
+npm i
+npm run-script build
+docker-compose run web python3 manage.py collectstatic
+docker-compose build
+docker-compose up
+```
 
 ## API
 
 You can use these APIs to create, delete and get URLs.<br/>
 
 GET - for redirect
-
 ```
-http://127.0.0.1:8000/{shorturl}/
+http://127.0.0.1:8000/r/{shorturl}/
 ```
-
 POST
-
 ```
 http://127.0.0.1:8000/api/url/
 ```
-
 GET all - Admin required
-
 ```
 http://127.0.0.1:8000/api/url/
 ```
-
 GET/DELETE - Admin required
-
 ```
 http://127.0.0.1:8000/api/url/{shorturl}/
 ```
-
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-
-/node_modules
-/.pnp
-.pnp.js
-
-# testing
-
-/coverage
-
-# production
-
-/build
-
-# misc
-
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log\*
