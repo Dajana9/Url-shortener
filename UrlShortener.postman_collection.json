@@ -116,7 +116,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": " {\"originalUrl\":[\"  https://www.youtube.com/watch?v=dQw4w9WgXcQ\", \"https://forums.docker.com/t/mac-install-old-version-of-docker/50486\", \"https://medium.com/\"]}"
+							"raw": " {\"originalUrl\":[\"https://www.youtube.com/watch?v=dQw4w9WgXcQ\", \"https://forums.docker.com/t/mac-install-old-version-of-docker/50486\", \"https://medium.com/\"]}"
 						},
 						"url": {
 							"raw": "http://127.0.0.1:8000/api/url/",
@@ -152,7 +152,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": " {\"originalUrl\":[\"  https://www.youtube.com/watch?v=dQw4w9WgXcQ\"]}"
+							"raw": " {\"originalUrl\":[\"https://www.youtube.com/watch?v=dQw4w9WgXcQ\"]}"
 						},
 						"url": {
 							"raw": "http://127.0.0.1:8000/api/url/",

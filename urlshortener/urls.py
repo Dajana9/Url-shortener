@@ -8,5 +8,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/url/$', urlView.as_view()),
     url(r'^api/url/(?P<shortUrl>[\w-]+)/$', oneUrlView.as_view()),
-    url(r'^(?P<shortUrl>[\w-]+)/$', redirectView.as_view()),
+    url(r'^r/(?P<shortUrl>[\w-]+)/$', redirectView.as_view()),
+    url(r'^', TemplateView.as_view(template_name='index.html')),
 ]
