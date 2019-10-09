@@ -261,7 +261,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/<shorturl>/",
+							"raw": "http://127.0.0.1:8000/r/<shorturl>/",
 							"protocol": "http",
 							"host": [
 								"127",
