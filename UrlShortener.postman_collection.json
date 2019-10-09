@@ -1,0 +1,285 @@
+{
+	"info": {
+		"_postman_id": "6f14d7bd-f39b-45dc-a352-3e33cd5acf88",
+		"name": "UrlShortener",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "GET ALL",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Pass123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/url/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"url",
+								""
+							]
+						},
+						"description": "Get all short and original urls from the database"
+					},
+					"response": []
+				},
+				{
+					"name": "GET ONE",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Pass123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/url/<shorturl>/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"url",
+								"<shorturl>",
+								""
+							]
+						},
+						"description": "Instead of <shorturl> type real shortUrl from database\nhttp://127.0.0.1:8000/api/url/<shorturl>/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "POST",
+			"item": [
+				{
+					"name": "POST urls",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\"originalUrl\":[\"  https://www.youtube.com/watch?v=dQw4w9WgXcQ\", \"https://forums.docker.com/t/mac-install-old-version-of-docker/50486\", \"https://medium.com/\"]}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/url/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"url",
+								""
+							]
+						},
+						"description": "Post one url to get short url"
+					},
+					"response": []
+				},
+				{
+					"name": "POST one url",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\"originalUrl\":[\"  https://www.youtube.com/watch?v=dQw4w9WgXcQ\"]}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/url/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"url",
+								""
+							]
+						},
+						"description": "Post one url"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DELETE",
+			"item": [
+				{
+					"name": "DELETE",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Pass123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/url/<shorturl>/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"url",
+								"<shorturl>",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Delete one element from db with short url. It deletes the whole db instance of that element.\n\nFirst with POST create some urls, then greb with GET shorturl you want, and then add it to the url.\n\nFor example http://127.0.0.1:8000/api/url/<shorturl>/",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d31c24f3-638e-4a3e-89fa-b1b293d7ebe9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "ada8224c-48aa-43b4-8fae-3f7861b1f4f8",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "REDIRECT",
+			"item": [
+				{
+					"name": "GET - REDIRECT",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/<shorturl>/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"<shorturl>",
+								""
+							]
+						},
+						"description": "Write shorturl from db instead of <shorturl>\n\nhttp://127.0.0.1:8000/<shorturl>/"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
