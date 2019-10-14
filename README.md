@@ -3,8 +3,8 @@
 RESTful API that will take any URL
 and create a shorter version of it, so it’s easier to remember/use/share.
 
-Backend - Django
-Frontend - React
+Backend - Django <br/>
+Frontend - React <br/>
 ## Stack
 
 Django, PostgreSQL (database), Python3, React,
@@ -24,20 +24,18 @@ There is a 'UrlShortener.postman_collection.json' with examples od GET,POST,DELE
 
 ```
 docker-compose build
-docker-compose up
-```
-
-Create superuser:<br/>
-
-```
+docker-compose run web python3 manage.py makemigrations 
+docker-compose run web python3 manage.py migrate
 docker-compose run web python3 manage.py createsuperuser
 ```
-
 \*In Postman examples I'm using <br/>
-
 ```
 username: admin
 password: Pass123
+
+```
+```
+docker-compose up
 ```
 #### Run frontend:<br/>
 ```
