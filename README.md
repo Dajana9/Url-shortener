@@ -23,7 +23,6 @@ There is a 'UrlShortener.postman_collection.json' with examples od GET,POST,DELE
 #### Run backend:<br/>
 
 ```
-docker-compose build
 docker-compose run web python3 manage.py makemigrations 
 docker-compose run web python3 manage.py migrate
 docker-compose run web python3 manage.py createsuperuser
